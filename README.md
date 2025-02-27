@@ -21,6 +21,6 @@ Inside the *main.py* file, the *main* function is called, which creates the GUI 
 
 **mariscotti**: If True, the fitting function will use the Mariscotti function as described in (M.A. Mariscotti, Nucl. Instrum. Method 50 (1967) 309.), instead of the scipy.signal.find_peaks function.
 
-**identification**: If True, the peaks will be identified using the *identify_peaks* function (not implemented yet).
+**identification**: If True, the peaks will be identified using the *identify_peaks* function.
 
 **efficiency_correction**: If True, the efficiency correction will be applied to the peaks.
