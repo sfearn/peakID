@@ -1,0 +1,536 @@
+Isotope,Energy (keV),Absolute emission probability (%),Category,Sub-category
+K-40,1460,10.55,Nuclear Power Plant,NORM
+Mn-54,835,100,Nuclear Power Plant,IND
+Fe-59,1099,56.5,Nuclear Power Plant,OTHER
+Co-57,122,85.5,Nuclear Power Plant,IND
+Co-58,810,99.4,Nuclear Power Plant,IND
+Co-60,1332,100,Nuclear Power Plant,IND
+Zn-65,1115,50,Nuclear Power Plant,OTHER
+Zr-95,724,44,Nuclear Power Plant,OTHER
+Nb-95,765,100,Nuclear Power Plant,OTHER
+Ru-106,512,21,Nuclear Power Plant,OTHER
+Ag-110m,657,100,Nuclear Power Plant,OTHER
+Sb-124,602,97,Nuclear Power Plant,OTHER
+I-131,364,81,Nuclear Power Plant,MED
+Cs-134,604,97,Nuclear Power Plant,IND
+Cs-137,662,85,Nuclear Power Plant,IND
+La-140,487,46,Nuclear Power Plant,OTHER
+Ce-144,133,11,Nuclear Power Plant,OTHER
+Ra-226,186,3.5,Nuclear Power Plant,NORM
+Th-232,63,0.3,Nuclear Power Plant,NORM
+Mo-99,140,89.6,Nuclear Power Plant,MED
+U-237,59,34,Nuclear Power Plant,SNM
+Eu-152,121,28.6,Nuclear Power Plant,IND
+Ra-226,186,3.5,Nuclear Power Plant,NORM
+Th-232,63,0.3,Nuclear Power Plant,NORM
+Th-228,84,1.2,Nuclear Power Plant,IND
+Pu-241,148,0.0002,Nuclear Power Plant,SNM
+U-232D,58,0.2,Nuclear Power Plant,SNM
+511 keV,511,100,Nuclear Power Plant,OTHER
+Lu-177,208,10.4,Nuclear Power Plant,MED
+U-235,185,57,Nuclear Power Plant,SNM
+U-238,49,0.07,Nuclear Power Plant,SNM
+K-40,511,0.002,Nuclear Power Plant,NORM
+Fe-59,1291,43.2,Nuclear Power Plant,OTHER
+Co-57,136,10.7,Nuclear Power Plant,IND
+Co-58,511,30,Nuclear Power Plant,IND
+Co-60,1173,100,Nuclear Power Plant,IND
+Zn-65,511,3,Nuclear Power Plant,OTHER
+Zr-95,756,54,Nuclear Power Plant,OTHER
+Ag-110m,677,11,Nuclear Power Plant,OTHER
+Sb-124,1690,47,Nuclear Power Plant,OTHER
+I-131,284,6,Nuclear Power Plant,MED
+Cs-134,795,85,Nuclear Power Plant,IND
+La-140,815,24,Nuclear Power Plant,OTHER
+Ce-144,80,1,Nuclear Power Plant,OTHER
+Th-232,140,0.02,Nuclear Power Plant,NORM
+Mo-99,739,12.1,Nuclear Power Plant,MED
+U-237,208,21,Nuclear Power Plant,SNM
+Eu-152,344,26.6,Nuclear Power Plant,IND
+Th-232,140,0.02,Nuclear Power Plant,NORM
+Th-228,215,0.3,Nuclear Power Plant,IND
+Pu-241,103,0.0001,Nuclear Power Plant,SNM
+U-232D,129,0.07,Nuclear Power Plant,SNM
+Lu-177,112,6.2,Nuclear Power Plant,MED
+U-235,143,10.9,Nuclear Power Plant,SNM
+U-238,113,0.017,Nuclear Power Plant,SNM
+Na-22,511,180,Homeland Security,IND
+K-40,1460,10.55,Homeland Security,NORM
+Cr-51,320,10,Homeland Security,MED
+Mn-54,835,100,Homeland Security,IND
+Co-57,122,85.5,Homeland Security,IND
+Co-60,1332,100,Homeland Security,IND
+Ga-67,93,38,Homeland Security,MED
+Se-75,264,59,Homeland Security,IND
+Tc-99m,140,89,Homeland Security,MED
+Pd-103,40,0.07,Homeland Security,MED
+In-111,171,90,Homeland Security,MED
+I-123,158,83,Homeland Security,MED
+Cs-131/I-125,35,6.6,Homeland Security,MED
+I-131,364,81,Homeland Security,MED
+Xe-133,81,37,Homeland Security,MED
+Ba-133,356,62,Homeland Security,IND
+Cs-137,662,85,Homeland Security,IND
+La-138,1435,65,Homeland Security,NORM
+Eu-152,121,28.6,Homeland Security,IND
+Eu-154,123,40.4,Homeland Security,IND
+Sm-153,103,29.1,Homeland Security,MED
+Ho-166,80,6.6,Homeland Security,IND
+Ir-192,316,82.8,Homeland Security,IND
+Tl-201,167,10,Homeland Security,MED
+Bi-207,569,98,Homeland Security,IND
+Ra-226,186,3.5,Homeland Security,NORM
+Th-232,63,0.3,Homeland Security,NORM
+U-235,185,57,Homeland Security,SNM
+U-238,49,0.07,Homeland Security,SNM
+Np-237,29,14.3,Homeland Security,SNM
+Pu-238,43,0.04,Homeland Security,SNM
+Pu-239,51,0.03,Homeland Security,SNM
+Am-241,59,36,Homeland Security,IND
+Cm-243,277,14,Homeland Security,OTHER
+Mo-99,140,89.6,Homeland Security,MED
+U-237,59,34,Homeland Security,SNM
+Eu-152,121,28.6,Homeland Security,IND
+Ra-226,186,3.5,Homeland Security,NORM
+Th-232,63,0.3,Homeland Security,NORM
+Th-228,84,1.2,Homeland Security,IND
+Pu-241,148,0.0002,Homeland Security,SNM
+U-232D,58,0.2,Homeland Security,SNM
+511 keV,511,100,Homeland Security,OTHER
+Lu-177,208,10.4,Homeland Security,MED
+U-235,185,57,Homeland Security,SNM
+U-238,49,0.07,Homeland Security,SNM
+Na-22,1274,100,Homeland Security,IND
+K-40,511,0.002,Homeland Security,NORM
+Co-57,136,10.7,Homeland Security,IND
+Co-60,1173,100,Homeland Security,IND
+Ga-67,184,20.9,Homeland Security,MED
+Se-75,136,57.8,Homeland Security,IND
+Tc-99m,142,0.023,Homeland Security,MED
+Pd-103,357,0.022,Homeland Security,MED
+In-111,245,94,Homeland Security,MED
+I-123,174,0.00083,Homeland Security,MED
+I-131,284,6,Homeland Security,MED
+Xe-133,79,0.3,Homeland Security,MED
+Ba-133,80,33,Homeland Security,IND
+La-138,788,34.7,Homeland Security,NORM
+Eu-152,344,26.6,Homeland Security,IND
+Eu-154,248,6.9,Homeland Security,IND
+Sm-153,69,5,Homeland Security,MED
+Ho-166,1379,0.9,Homeland Security,IND
+Ir-192,468,47.8,Homeland Security,IND
+Tl-201,135,2.6,Homeland Security,MED
+Bi-207,1063,75.6,Homeland Security,IND
+Th-232,140,0.02,Homeland Security,NORM
+U-235,143,10.9,Homeland Security,SNM
+U-238,113,0.017,Homeland Security,SNM
+Np-237,86,12.3,Homeland Security,SNM
+Pu-238,100,0.008,Homeland Security,SNM
+Pu-239,98,0.0014,Homeland Security,SNM
+Am-241,26,2.3,Homeland Security,IND
+Cm-243,228,10,Homeland Security,OTHER
+Mo-99,739,12.1,Homeland Security,MED
+U-237,208,21,Homeland Security,SNM
+Eu-152,344,26.6,Homeland Security,IND
+Th-232,140,0.02,Homeland Security,NORM
+Th-228,215,0.3,Homeland Security,IND
+Pu-241,103,0.0001,Homeland Security,SNM
+U-232D,129,0.07,Homeland Security,SNM
+Lu-177,112,6.2,Homeland Security,MED
+U-235,143,10.9,Homeland Security,SNM
+U-238,113,0.017,Homeland Security,SNM
+K-40,1460,10.55,Early Nuclear Accident,NORM
+Co-60,1332,100,Early Nuclear Accident,IND
+Kr-85m,514,0.44,Early Nuclear Accident,OTHER
+Kr-87,402,49.6,Early Nuclear Accident,OTHER
+Kr-88,196,25.9,Early Nuclear Accident,OTHER
+Zr-95,724,44,Early Nuclear Accident,OTHER
+Nb-95,765,100,Early Nuclear Accident,OTHER
+Tc-99m,140,89,Early Nuclear Accident,MED
+Ru-103,497,90,Early Nuclear Accident,OTHER
+I-131,364,81,Early Nuclear Accident,MED
+I-133,529,86,Early Nuclear Accident,OTHER
+I-135,1260,28.9,Early Nuclear Accident,OTHER
+Xe-133,81,37,Early Nuclear Accident,MED
+Xe-135,249,90,Early Nuclear Accident,OTHER
+Cs-134,604,97,Early Nuclear Accident,IND
+Cs-137,662,85,Early Nuclear Accident,IND
+La-140,487,46,Early Nuclear Accident,OTHER
+Ra-226,186,3.5,Early Nuclear Accident,NORM
+Th-232,63,0.3,Early Nuclear Accident,NORM
+Mo-99,140,89.6,Early Nuclear Accident,MED
+U-237,59,34,Early Nuclear Accident,SNM
+Eu-152,121,28.6,Early Nuclear Accident,IND
+Ra-226,186,3.5,Early Nuclear Accident,NORM
+Th-232,63,0.3,Early Nuclear Accident,NORM
+Th-228,84,1.2,Early Nuclear Accident,IND
+Pu-241,148,0.0002,Early Nuclear Accident,SNM
+U-232D,58,0.2,Early Nuclear Accident,SNM
+Lu-177,208,10.4,Early Nuclear Accident,MED
+U-235,185,57,Early Nuclear Accident,SNM
+U-238,49,0.07,Early Nuclear Accident,SNM
+K-40,511,0.002,Early Nuclear Accident,NORM
+Co-60,1173,100,Early Nuclear Accident,IND
+Kr-87,845,7.3,Early Nuclear Accident,OTHER
+Kr-88,834,13,Early Nuclear Accident,OTHER
+Zr-95,756,54,Early Nuclear Accident,OTHER
+Tc-99m,142,0.023,Early Nuclear Accident,MED
+Ru-103,610,5.8,Early Nuclear Accident,OTHER
+I-131,284,6,Early Nuclear Accident,MED
+I-133,875,4.5,Early Nuclear Accident,OTHER
+I-135,1131,22.7,Early Nuclear Accident,OTHER
+Xe-133,79,0.3,Early Nuclear Accident,MED
+Xe-135,608,2.9,Early Nuclear Accident,OTHER
+Cs-134,795,85,Early Nuclear Accident,IND
+La-140,815,24,Early Nuclear Accident,OTHER
+Th-232,140,0.02,Early Nuclear Accident,NORM
+Mo-99,739,12.1,Early Nuclear Accident,MED
+U-237,208,21,Early Nuclear Accident,SNM
+Eu-152,344,26.6,Early Nuclear Accident,IND
+Th-232,140,0.02,Early Nuclear Accident,NORM
+Th-228,215,0.3,Early Nuclear Accident,IND
+Pu-241,103,0.0001,Early Nuclear Accident,SNM
+U-232D,129,0.07,Early Nuclear Accident,SNM
+Lu-177,112,6.2,Early Nuclear Accident,MED
+U-235,143,10.9,Early Nuclear Accident,SNM
+U-238,113,0.017,Early Nuclear Accident,SNM
+K-40,1460,10.55,Late-Time Nuclear Accident,NORM
+Zr-95,724,44,Late-Time Nuclear Accident,OTHER
+Nb-95,765,100,Late-Time Nuclear Accident,OTHER
+Ru-103,497,90,Late-Time Nuclear Accident,OTHER
+Ru-106,512,21,Late-Time Nuclear Accident,OTHER
+I-131,364,81,Late-Time Nuclear Accident,MED
+Cs-134,604,97,Late-Time Nuclear Accident,IND
+Cs-136,818,100,Late-Time Nuclear Accident,OTHER
+Cs-137,662,85,Late-Time Nuclear Accident,IND
+La-140,487,46,Late-Time Nuclear Accident,OTHER
+Ce-141,145,49,Late-Time Nuclear Accident,OTHER
+Ce-144,133,11,Late-Time Nuclear Accident,OTHER
+Ra-226,186,3.5,Late-Time Nuclear Accident,NORM
+Th-232,63,0.3,Late-Time Nuclear Accident,NORM
+Mo-99,140,89.6,Late-Time Nuclear Accident,MED
+U-237,59,34,Late-Time Nuclear Accident,SNM
+Eu-152,121,28.6,Late-Time Nuclear Accident,IND
+Ra-226,186,3.5,Late-Time Nuclear Accident,NORM
+Th-232,63,0.3,Late-Time Nuclear Accident,NORM
+Th-228,84,1.2,Late-Time Nuclear Accident,IND
+Pu-241,148,0.0002,Late-Time Nuclear Accident,SNM
+U-232D,58,0.2,Late-Time Nuclear Accident,SNM
+511 keV,511,100,Late-Time Nuclear Accident,OTHER
+Lu-177,208,10.4,Late-Time Nuclear Accident,MED
+U-235,185,57,Late-Time Nuclear Accident,SNM
+U-238,49,0.07,Late-Time Nuclear Accident,SNM
+K-40,511,0.002,Late-Time Nuclear Accident,NORM
+Zr-95,756,54,Late-Time Nuclear Accident,OTHER
+Ru-103,610,5.8,Late-Time Nuclear Accident,OTHER
+I-131,284,6,Late-Time Nuclear Accident,MED
+Cs-134,795,85,Late-Time Nuclear Accident,IND
+Cs-136,1048,80.3,Late-Time Nuclear Accident,OTHER
+La-140,815,24,Late-Time Nuclear Accident,OTHER
+Ce-144,80,1,Late-Time Nuclear Accident,OTHER
+Th-232,140,0.02,Late-Time Nuclear Accident,NORM
+Mo-99,739,12.1,Late-Time Nuclear Accident,MED
+U-237,208,21,Late-Time Nuclear Accident,SNM
+Eu-152,344,26.6,Late-Time Nuclear Accident,IND
+Th-232,140,0.02,Late-Time Nuclear Accident,NORM
+Th-228,215,0.3,Late-Time Nuclear Accident,IND
+Pu-241,103,0.0001,Late-Time Nuclear Accident,SNM
+U-232D,129,0.07,Late-Time Nuclear Accident,SNM
+Lu-177,112,6.2,Late-Time Nuclear Accident,MED
+U-235,143,10.9,Late-Time Nuclear Accident,SNM
+U-238,113,0.017,Late-Time Nuclear Accident,SNM
+K-40,1460,10.55,Spent Fuel,NORM
+Ru-106,512,21,Spent Fuel,OTHER
+Ag-110m,657,100,Spent Fuel,OTHER
+Sb-125,427,29.6,Spent Fuel,OTHER
+Cs-134,604,97,Spent Fuel,IND
+Cs-137,662,85,Spent Fuel,IND
+Ce-144,133,11,Spent Fuel,OTHER
+Eu-154,123,40.4,Spent Fuel,IND
+Ra-226,186,3.5,Spent Fuel,NORM
+Th-232,63,0.3,Spent Fuel,NORM
+U-235,185,57,Spent Fuel,SNM
+U-238,49,0.07,Spent Fuel,SNM
+Pu-239,51,0.03,Spent Fuel,SNM
+Am-241,59,36,Spent Fuel,IND
+Mo-99,140,89.6,Spent Fuel,MED
+U-237,59,34,Spent Fuel,SNM
+Eu-152,121,28.6,Spent Fuel,IND
+Ra-226,186,3.5,Spent Fuel,NORM
+Th-232,63,0.3,Spent Fuel,NORM
+Pu-241,148,0.0002,Spent Fuel,SNM
+U-232D,58,0.2,Spent Fuel,SNM
+U-235,185,57,Spent Fuel,SNM
+U-238,49,0.07,Spent Fuel,SNM
+Lu-177,208,10.4,Spent Fuel,MED
+K-40,511,0.002,Spent Fuel,NORM
+Ag-110m,677,11,Spent Fuel,OTHER
+Sb-125,463,10.5,Spent Fuel,OTHER
+Cs-134,600,17.8,Spent Fuel,IND
+Ce-144,80,1,Spent Fuel,OTHER
+Eu-154,248,6.9,Spent Fuel,IND
+Th-232,140,0.02,Spent Fuel,NORM
+U-235,143,10.9,Spent Fuel,SNM
+U-238,113,0.017,Spent Fuel,SNM
+Pu-239,98,0.0014,Spent Fuel,SNM
+Am-241,26,2.3,Spent Fuel,IND
+Mo-99,739,12.1,Spent Fuel,MED
+U-237,208,21,Spent Fuel,SNM
+Eu-152,344,26.6,Spent Fuel,IND
+Th-232,140,0.02,Spent Fuel,NORM
+Pu-241,103,0.0001,Spent Fuel,SNM
+U-232D,129,0.07,Spent Fuel,SNM
+U-235,143,10.9,Spent Fuel,SNM
+U-238,113,0.017,Spent Fuel,SNM
+Lu-177,112,6.2,Spent Fuel,MED
+K-40,1460,10.55,CTBT OSI,NORM
+Zr-95,724,44,CTBT OSI,OTHER
+Nb-95,765,100,CTBT OSI,OTHER
+Tc-99m,140,89,CTBT OSI,MED
+Ru-103,497,90,CTBT OSI,OTHER
+Ru-106,512,21,CTBT OSI,OTHER
+I-131,364,81,CTBT OSI,MED
+I-132,772,1,CTBT OSI,OTHER
+I-133,529,86.3,CTBT OSI,OTHER
+Xe-133,81,37,CTBT OSI,MED
+Cs-137,662,85,CTBT OSI,IND
+La-140,487,46,CTBT OSI,OTHER
+Ce-141,145,48.3,CTBT OSI,OTHER
+Ce-144,133,11,CTBT OSI,OTHER
+Ra-226,186,3.5,CTBT OSI,NORM
+Th-232,63,0.3,CTBT OSI,NORM
+Mo-99,140,89.6,CTBT OSI,MED
+U-237,59,34,CTBT OSI,SNM
+Eu-152,121,28.6,CTBT OSI,IND
+Ra-226,186,3.5,CTBT OSI,NORM
+Th-232,63,0.3,CTBT OSI,NORM
+Th-228,84,1.2,CTBT OSI,IND
+Pu-241,148,0.0002,CTBT OSI,SNM
+U-232D,58,0.2,CTBT OSI,SNM
+511 keV,511,100,CTBT OSI,OTHER
+U-235,185,57,CTBT OSI,SNM
+U-238,49,0.07,CTBT OSI,SNM
+K-40,511,0.002,CTBT OSI,NORM
+Zr-95,756,54,CTBT OSI,OTHER
+Tc-99m,142,0.023,CTBT OSI,MED
+Ru-103,610,5.8,CTBT OSI,OTHER
+I-131,284,6,CTBT OSI,MED
+I-132,667,0.75,CTBT OSI,OTHER
+I-133,875,4.5,CTBT OSI,OTHER
+Xe-133,79,0.3,CTBT OSI,MED
+La-140,815,24,CTBT OSI,OTHER
+Ce-144,80,1,CTBT OSI,OTHER
+Th-232,140,0.02,CTBT OSI,NORM
+Mo-99,739,12.1,CTBT OSI,MED
+U-237,208,21,CTBT OSI,SNM
+Eu-152,344,26.6,CTBT OSI,IND
+Th-232,140,0.02,CTBT OSI,NORM
+Th-228,215,0.3,CTBT OSI,IND
+Pu-241,103,0.0001,CTBT OSI,SNM
+U-232D,129,0.07,CTBT OSI,SNM
+U-235,143,10.9,CTBT OSI,SNM
+U-238,113,0.017,CTBT OSI,SNM
+Na-22,511,180,Laboratory Miscellaneous,IND
+Na-24,1368,100,Laboratory Miscellaneous,IND
+K-40,1460,10.55,Laboratory Miscellaneous,NORM
+Ar-41,1239,100,Laboratory Miscellaneous,OTHER
+Cr-51,320,9.9,Laboratory Miscellaneous,MED
+Mn-54,835,100,Laboratory Miscellaneous,IND
+Fe-59,1099,56.5,Laboratory Miscellaneous,OTHER
+Co-57,122,85.5,Laboratory Miscellaneous,IND
+Co-58,810,99.4,Laboratory Miscellaneous,IND
+Co-60,1332,100,Laboratory Miscellaneous,IND
+Zn-65,1115,50,Laboratory Miscellaneous,OTHER
+Y-88,1836,99.4,Laboratory Miscellaneous,IND
+Ru-106,512,21,Laboratory Miscellaneous,OTHER
+Cd-109,88,3.6,Laboratory Miscellaneous,IND
+Ag-110m,657,100,Laboratory Miscellaneous,OTHER
+Sb-122,564,71,Laboratory Miscellaneous,OTHER
+Sb-124,602,97,Laboratory Miscellaneous,OTHER
+Ba-133,356,62,Laboratory Miscellaneous,IND
+Cs-137,662,85,Laboratory Miscellaneous,IND
+Eu-152,121,28.6,Laboratory Miscellaneous,IND
+Eu-154,123,40.4,Laboratory Miscellaneous,IND
+Ho-166,80,6.6,Laboratory Miscellaneous,IND
+Yb-169,63,44,Laboratory Miscellaneous,IND
+Tm-170,84,2.5,Laboratory Miscellaneous,ING
+Lu-176,306,94,Laboratory Miscellaneous,IND
+Ir-192,316,82.8,Laboratory Miscellaneous,IND
+Bi-207,570,97.8,Laboratory Miscellaneous,IND
+Po-211,569,0.54,Laboratory Miscellaneous,IND
+Ra-226,186,3.5,Laboratory Miscellaneous,NORM
+Th-232,63,0.3,Laboratory Miscellaneous,NORM
+U-235,185,57,Laboratory Miscellaneous,SNM
+U-238,49,0.07,Laboratory Miscellaneous,SNM
+Pu-238,43,0.04,Laboratory Miscellaneous,SNM
+Pu-239,51,0.03,Laboratory Miscellaneous,SNM
+Am-241,59,36,Laboratory Miscellaneous,IND
+Cm-243,277,14,Laboratory Miscellaneous,OTHER
+Mo-99,140,89.6,Laboratory Miscellaneous,MED
+U-237,59,34,Laboratory Miscellaneous,SNM
+Eu-152,121,28.6,Laboratory Miscellaneous,IND
+Ra-226,186,3.5,Laboratory Miscellaneous,NORM
+Th-232,63,0.3,Laboratory Miscellaneous,NORM
+Th-228,84,1.2,Laboratory Miscellaneous,IND
+Pu-241,148,0.0002,Laboratory Miscellaneous,SNM
+U-232D,58,0.2,Laboratory Miscellaneous,SNM
+511 keV,511,100,Laboratory Miscellaneous,OTHER
+Lu-177,208,10.4,Laboratory Miscellaneous,MED
+U-235,185,57,Laboratory Miscellaneous,SNM
+U-238,49,0.07,Laboratory Miscellaneous,SNM
+Na-22,1274,100,Laboratory Miscellaneous,IND
+Na-24,2754,100,Laboratory Miscellaneous,IND
+K-40,511,0.002,Laboratory Miscellaneous,NORM
+Ar-41,1677,0.05,Laboratory Miscellaneous,OTHER
+Fe-59,1291,43.2,Laboratory Miscellaneous,OTHER
+Co-57,136,10.7,Laboratory Miscellaneous,IND
+Co-58,511,30,Laboratory Miscellaneous,IND
+Co-60,1173,100,Laboratory Miscellaneous,IND
+Zn-65,511,3,Laboratory Miscellaneous,OTHER
+Y-88,898,94,Laboratory Miscellaneous,IND
+Ag-110m,677,11,Laboratory Miscellaneous,OTHER
+Sb-122,692,3.9,Laboratory Miscellaneous,OTHER
+Sb-124,1690,47,Laboratory Miscellaneous,OTHER
+Ba-133,80,33,Laboratory Miscellaneous,IND
+Eu-152,344,26.6,Laboratory Miscellaneous,IND
+Eu-154,248,6.9,Laboratory Miscellaneous,IND
+Ho-166,1379,0.9,Laboratory Miscellaneous,IND
+Yb-169,198,35,Laboratory Miscellaneous,IND
+Tm-170,78.6,0.0034,Laboratory Miscellaneous,ING
+Lu-176,201,86.5,Laboratory Miscellaneous,IND
+Ir-192,468,47.8,Laboratory Miscellaneous,IND
+Bi-207,1063,74.6,Laboratory Miscellaneous,IND
+Po-211,897,0.51,Laboratory Miscellaneous,IND
+Th-232,140,0.02,Laboratory Miscellaneous,NORM
+U-235,143,10.9,Laboratory Miscellaneous,SNM
+U-238,113,0.017,Laboratory Miscellaneous,SNM
+Pu-238,100,0.008,Laboratory Miscellaneous,SNM
+Pu-239,98,0.0014,Laboratory Miscellaneous,SNM
+Am-241,26,2.3,Laboratory Miscellaneous,IND
+Cm-243,228,10,Laboratory Miscellaneous,OTHER
+Mo-99,739,12.1,Laboratory Miscellaneous,MED
+U-237,208,21,Laboratory Miscellaneous,SNM
+Eu-152,344,26.6,Laboratory Miscellaneous,IND
+Th-232,140,0.02,Laboratory Miscellaneous,NORM
+Th-228,215,0.3,Laboratory Miscellaneous,IND
+Pu-241,103,0.0001,Laboratory Miscellaneous,SNM
+U-232D,129,0.07,Laboratory Miscellaneous,SNM
+Lu-177,112,6.2,Laboratory Miscellaneous,MED
+U-235,143,10.9,Laboratory Miscellaneous,SNM
+U-238,113,0.017,Laboratory Miscellaneous,SNM
+Pb-210,13,25,Laboratory Miscellaneous,NORM
+Pb-210,47,4,Laboratory Miscellaneous,NORM
+Pb-214,242,7,Laboratory Miscellaneous,NORM
+Pb-214,295,19,Laboratory Miscellaneous,NORM
+Pb-214,352,37,Laboratory Miscellaneous,NORM
+Pb-214,786,1,Laboratory Miscellaneous,NORM
+Bi-207,1770,7,Laboratory Miscellaneous,FUEL/REACTOR
+Bi-214,610,46,Laboratory Miscellaneous,NORM
+Bi-214,1120,15,Laboratory Miscellaneous,NORM
+Bi-214,1764,16,Laboratory Miscellaneous,NORM
+Bi-214,2205,5,Laboratory Miscellaneous,NORM
+Pb-210,13,25,Homeland Security,NORM
+Pb-210,47,4,Homeland Security,NORM
+Pb-214,242,7,Homeland Security,NORM
+Pb-214,295,19,Homeland Security,NORM
+Pb-214,352,37,Homeland Security,NORM
+Pb-214,786,1,Homeland Security,NORM
+Bi-207,1770,7,Homeland Security,FUEL/REACTOR
+Bi-214,610,46,Homeland Security,NORM
+Bi-214,1120,15,Homeland Security,NORM
+Bi-214,1764,16,Homeland Security,NORM
+Bi-214,2205,5,Homeland Security,NORM
+Eu-152,244,7,Nuclear Power Plant,IND
+Eu-152,244,7,Homeland Security,IND
+Eu-152,244,7,Laboratory Miscellaneous,IND
+Eu-152,244,7,CTBT OSI,IND
+Eu-152,244,7,Spent Fuel,IND
+Eu-152,244,7,Late-Time Nuclear Accident,IND
+Eu-152,244,7,Early Nuclear Accident,IND
+Eu-152,244,7,Nuclear Power Plant,IND
+Eu-152,244,7,Homeland Security,IND
+Eu-152,244,7,Laboratory Miscellaneous,IND
+Eu-152,244,7,CTBT OSI,IND
+Eu-152,244,7,Spent Fuel,IND
+Eu-152,244,7,Late-Time Nuclear Accident,IND
+Eu-152,244,7,Early Nuclear Accident,IND
+Eu-152,411,3,Nuclear Power Plant,IND
+Eu-152,411,3,Homeland Security,IND
+Eu-152,411,3,Laboratory Miscellaneous,IND
+Eu-152,411,3,CTBT OSI,IND
+Eu-152,411,3,Spent Fuel,IND
+Eu-152,411,3,Late-Time Nuclear Accident,IND
+Eu-152,411,3,Early Nuclear Accident,IND
+Eu-152,444,3,Nuclear Power Plant,IND
+Eu-152,444,3,Homeland Security,IND
+Eu-152,444,3,Laboratory Miscellaneous,IND
+Eu-152,444,3,CTBT OSI,IND
+Eu-152,444,3,Spent Fuel,IND
+Eu-152,444,3,Late-Time Nuclear Accident,IND
+Eu-152,444,3,Early Nuclear Accident,IND
+Eu-152,779,13,Nuclear Power Plant,IND
+Eu-152,779,13,Homeland Security,IND
+Eu-152,779,13,Laboratory Miscellaneous,IND
+Eu-152,779,13,CTBT OSI,IND
+Eu-152,779,13,Spent Fuel,IND
+Eu-152,779,13,Late-Time Nuclear Accident,IND
+Eu-152,779,13,Early Nuclear Accident,IND
+Eu-152,867,4,Nuclear Power Plant,IND
+Eu-152,867,4,Homeland Security,IND
+Eu-152,867,4,Laboratory Miscellaneous,IND
+Eu-152,867,4,CTBT OSI,IND
+Eu-152,867,4,Spent Fuel,IND
+Eu-152,867,4,Late-Time Nuclear Accident,IND
+Eu-152,867,4,Early Nuclear Accident,IND
+Eu-152,964,14,Nuclear Power Plant,IND
+Eu-152,964,14,Homeland Security,IND
+Eu-152,964,14,Laboratory Miscellaneous,IND
+Eu-152,964,14,CTBT OSI,IND
+Eu-152,964,14,Spent Fuel,IND
+Eu-152,964,14,Late-Time Nuclear Accident,IND
+Eu-152,964,14,Early Nuclear Accident,IND
+Eu-152,1086,10,Nuclear Power Plant,IND
+Eu-152,1086,10,Homeland Security,IND
+Eu-152,1086,10,Laboratory Miscellaneous,IND
+Eu-152,1086,10,CTBT OSI,IND
+Eu-152,1086,10,Spent Fuel,IND
+Eu-152,1086,10,Late-Time Nuclear Accident,IND
+Eu-152,1086,10,Early Nuclear Accident,IND
+Eu-152,1089,2,Nuclear Power Plant,IND
+Eu-152,1089,2,Homeland Security,IND
+Eu-152,1089,2,Laboratory Miscellaneous,IND
+Eu-152,1089,2,CTBT OSI,IND
+Eu-152,1089,2,Spent Fuel,IND
+Eu-152,1089,2,Late-Time Nuclear Accident,IND
+Eu-152,1089,2,Early Nuclear Accident,IND
+Eu-152,1112,13,Nuclear Power Plant,IND
+Eu-152,1112,13,Homeland Security,IND
+Eu-152,1112,13,Laboratory Miscellaneous,IND
+Eu-152,1112,13,CTBT OSI,IND
+Eu-152,1112,13,Spent Fuel,IND
+Eu-152,1112,13,Late-Time Nuclear Accident,IND
+Eu-152,1112,13,Early Nuclear Accident,IND
+Eu-152,1408,21,Nuclear Power Plant,IND
+Eu-152,1408,21,Homeland Security,IND
+Eu-152,1408,21,Laboratory Miscellaneous,IND
+Eu-152,1408,21,CTBT OSI,IND
+Eu-152,1408,21,Spent Fuel,IND
+Eu-152,1408,21,Late-Time Nuclear Accident,IND
+Eu-152,1408,21,Early Nuclear Accident,IND
+Eu-155,26.5,0.3,Laboratory Miscellaneous,IND
+Eu-155,45.3,1.3,Laboratory Miscellaneous,IND
+Eu-155,60,1.22,Laboratory Miscellaneous,IND
+Eu-155,86.5,30.7,Laboratory Miscellaneous,IND
+Eu-155,105.3,21.1,Laboratory Miscellaneous,IND
+Eu-155,26.5,0.3,Laboratory Miscellaneous,IND
+Eu-155,45.3,1.3,Laboratory Miscellaneous,IND
+Eu-155,60,1.22,Laboratory Miscellaneous,IND
+Eu-155,86.5,30.7,Laboratory Miscellaneous,IND
+Eu-155,105.3,21.1,Laboratory Miscellaneous,IND
+Eu-154,592,5,Laboratory Miscellaneous,IND
+Eu-154,248,7,Laboratory Miscellaneous,IND
+Eu-154,757,4.5,Laboratory Miscellaneous,IND
+Eu-154,723.3,20,Laboratory Miscellaneous,IND
+Eu-154,873,12.08,Laboratory Miscellaneous,IND
+Eu-154,996.3,10.8,Laboratory Miscellaneous,IND
+Eu-154,1005,18,Laboratory Miscellaneous,IND
