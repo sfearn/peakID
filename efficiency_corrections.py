@@ -30,26 +30,24 @@ def find_correction(x, material, thickness, density):
 
     return data, scale, y1, x
 
-def correct_spectrum(spectrum):
-    from config import material, average_thickness, density
+def correct_spectrum(spectrum, settings):
+    material = settings.get("material", "CsI")
+    average_thickness = settings.get("average_thickness", 1.27)
+    density = settings.get("density", {"NaI": 3.67, "CsI": 4.51})
 
     x = np.linspace(1, len(spectrum), len(spectrum) - 1)
 
-    try:
-        from config import M, c
-        linear = True
+    calibration_model = str(settings.get("calibration_model", "linear")).lower()
+    if calibration_model == "linear":
+        M = settings.get("M", 1.0)
+        c = settings.get("c", 0.0)
         x = M * x + c
-    except ImportError:
-        linear = False
-
-    try:
-        from config import a, b, c
-        para = True
+    elif calibration_model == "parabolic":
+        a = settings.get("a", 0.0)
+        b = settings.get("b", 1.0)
+        c = settings.get("c", 0.0)
         x = a * x**2 + b * x + c
-    except ImportError:
-        para = False
-
-    if linear==False and para==False:
+    else:
         print("No channel to energy conversion parameters found, efficiency correction will not be applied.")
         return spectrum
 

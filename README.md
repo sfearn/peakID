@@ -1,26 +1,41 @@
 # Peak Finding and Fitting
 
-Contains the code for peak finding and fitting for gamma spectra. Running *main.py* provides a GUI with configurable parameters for peak finding and fitting. The expected file is a .txt or .csv file containing counts in each channel (e.g. for a 4096 channel spectrometer, the file would contain 4096 rows each containing a single integer).
+PeakID provides peak finding, fitting, and isotope lookup for gamma spectra.
 
-Inside the *main.py* file, the *main* function is called, which creates the GUI and runs the main loop. This also has configurable settings:
+## GUI workflow (PyQt6)
 
-```    
-   df, corrected_array, fits = main(f,
-                                     useVoigt=False,
-                                     mariscotti=False,
-                                     removeBG=True,
-                                     identification=False,
-                                     efficiency_correction=False,
-                                     smooth=True
-                                     )
+Run `main.py` to open the GUI. The app now:
+
+- Uses grouped settings panels (Calibration, Peak Finding, Fitting/Smoothing, Background, Detector, Identification, Run Options)
+- Includes one `Apply Settings` button and one `Reset to Defaults` button
+- Loads and displays the selected spectrum immediately
+- Runs processing without closing the window
+- Shows results in a table inside the GUI
+- Keeps the GUI open and retains the selected spectrum even when no peaks are found
+
+## Settings storage
+
+Settings are stored in `settings.json` and managed by `settings_manager.py`.
+
+- `config.py` is no longer required by the processing or GUI pipeline
+- If `settings.json` does not exist, defaults are created automatically
+
+## Programmatic usage
+
+The processing entry point remains `main.main(...)`:
+
+```
+df, corrected_array, fits, background = main(
+   spectrum,
+   useVoigt=False,
+   mariscotti=False,
+   identification=True,
+   efficiency_correction=False,
+   smooth=True,
+)
 ```
 
-```df``` is a pandas dataframe containing the peak information, ```corrected_array``` is the array with the background removed, and ```fits``` is a list of the y_fit values.
-
-**useVoigt**: If True, the fitting function will use a Voigt profile instead of a Gaussian profile.
-
-**mariscotti**: If True, the fitting function will use the Mariscotti function as described in (M.A. Mariscotti, Nucl. Instrum. Method 50 (1967) 309.), instead of the scipy.signal.find_peaks function.
-
-**identification**: If True, the peaks will be identified using the *identify_peaks* function, giving suggestions for isotopes present.
-
-**efficiency_correction**: If True, the efficiency correction will be applied to the spectrum (not yet implemented).
+- `df`: peak table (can be empty if no peaks are found)
+- `corrected_array`: processed spectrum
+- `fits`: fitted profile array
+- `background`: estimated background

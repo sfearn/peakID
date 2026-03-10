@@ -8,9 +8,21 @@ from scipy.optimize import curve_fit, minimize
 import scipy.special as sp
 from scipy.signal import savgol_filter, find_peaks
 import matplotlib.pyplot as plt
-import file_edit_GUI as GUI
 import efficiency_corrections as ec
+from settings_manager import load_settings
 plt.rcParams.update({'font.size': 18})
+
+
+SETTINGS = load_settings()
+
+
+def update_settings(settings):
+    global SETTINGS
+    SETTINGS = dict(settings)
+
+
+def get_setting(key, default=None):
+    return SETTINGS.get(key, default)
 
 
 def gaussian(x, mu, sig, a):
@@ -25,38 +37,28 @@ def voigt(x, mu, sig, gamma, a):
 
 def linear_channel_to_energy(channel):
     """Completes y = M*x + c conversions for channel numbers."""
-    from config import c, M
-
+    M = get_setting("M", 1.0)
+    c = get_setting("c", 0.0)
     return (M * channel) + c
 
 
 def parabolic_channel_to_energy(channel):
     """Completes y = ax^2 + bx + c conversions for channel numbers."""
-    from config import a, b, c
-
+    a = get_setting("a", 0.0)
+    b = get_setting("b", 1.0)
+    c = get_setting("c", 0.0)
     return (a * channel ** 2) + (b * channel) + c
 
 
 def channel_to_energy(channels):
-        for i in range(2):
-            try:
-                if i == 0:
-                    energies = linear_channel_to_energy(channels)
-                    converted = True
-                    break
-                elif i == 1:
-                    energies = parabolic_channel_to_energy(channels)
-                    converted = True
-                    break
-            except ImportError:
-                converted = False
-                pass
+        calibration_model = str(get_setting("calibration_model", "linear")).lower()
+        if calibration_model == "linear":
+            return linear_channel_to_energy(channels)
+        if calibration_model == "parabolic":
+            return parabolic_channel_to_energy(channels)
 
-        if converted == False:
-            print("Error: No conversion found in config.py file, using channel numbers as energies.")
-            return channels
-        else:
-            return energies
+        print("No channel-to-energy conversion configured, using channel numbers as energies.")
+        return channels
 
 
 def findintensity(areas):
@@ -201,7 +203,8 @@ def peak_finding(N, min_FWHM, max_FWHM, FWHM_step, confidence=None):
 
     if confidence == None:
         # get confidence factor from config
-        from config import confidence, intensity_threshold
+        confidence = get_setting("confidence", 1.0)
+        intensity_threshold = get_setting("intensity_threshold", 1e-9)
     else:
         intensity_threshold = (1e-2 / max(N))
 
@@ -384,7 +387,9 @@ def peak_fitting(array, locs, FWHMs, widths=np.array([]), voigt_func=False):
     new_locs, std_devs, r2s, new_FWHMs, full_widths, peak_areas, errors = [], [], [], [], [], [], []
     fits = np.zeros(array.shape)
 
-    from config import base_width, min_FWHM, max_FWHM
+    base_width = get_setting("base_width", 10.0)
+    min_FWHM = get_setting("min_FWHM", 20)
+    max_FWHM = get_setting("max_FWHM", 150)
 
     # cycle through peaks to fit each one
     for i in range(len(locs)):
@@ -447,11 +452,22 @@ def peak_fitting(array, locs, FWHMs, widths=np.array([]), voigt_func=False):
 
         if widths.size > 0:
             # if the fit is bad, reject the peak
-            if i > 0:
-                diff = locs[i] - locs[i-1]
+            if len(locs) == 1:
+                nearest_spacing = np.inf
+            elif i == 0:
+                nearest_spacing = abs(locs[i + 1] - locs[i])
+            elif i == len(locs) - 1:
+                nearest_spacing = abs(locs[i] - locs[i - 1])
             else:
-                diff = np.inf
-            if not r2 < 0.6 and min_FWHM < FWHM < max_FWHM and diff > FWHM:
+                nearest_spacing = min(abs(locs[i] - locs[i - 1]), abs(locs[i + 1] - locs[i]))
+
+            passes_r2 = r2 >= 0.6
+            passes_fwhm = FWHM > 0
+            # allow narrow fits in refinement iterations, but reject obvious runaway widths
+            passes_upper_fwhm = FWHM < (max_FWHM * 5)
+            passes_spacing = nearest_spacing > FWHM
+
+            if passes_r2 and passes_fwhm and passes_upper_fwhm and passes_spacing:
                 try:
                     new_locs.append(new_loc)
                     r2s.append(r2)
@@ -464,7 +480,18 @@ def peak_fitting(array, locs, FWHMs, widths=np.array([]), voigt_func=False):
                     print(e)
                     fits[start:end] = 0
             else:
-                print(f"Peak at {locs[i]} rejected: {locs[i]-locs[i-1]} > {FWHM}, r2={r2},FWHM={FWHM}")
+                reasons = []
+                if not passes_r2:
+                    reasons.append(f"r2={r2:.3f} < 0.6")
+                if not passes_fwhm:
+                    reasons.append(f"FWHM={FWHM:.3f} <= 0")
+                if not passes_upper_fwhm:
+                    reasons.append(f"FWHM={FWHM:.3f} > {max_FWHM * 5:.3f}")
+                if not passes_spacing:
+                    reasons.append(f"nearest spacing={nearest_spacing:.3f} <= FWHM={FWHM:.3f}")
+
+                reason_txt = "; ".join(reasons) if len(reasons) > 0 else "failed rejection criteria"
+                print(f"Peak at {locs[i]} rejected: {reason_txt}")
                 fits[start:end] = 0
         else:
             if r2 > 0.1:
@@ -500,15 +527,12 @@ def source_lookup(Es, r2s, peak_areas, corrected):
     Returns:
     list: list of identified peaks
     """
-    try:
-        from config import time
-        if time < 1:
-            raise ImportError
-    except ImportError:
+    time = get_setting("time", 0.0)
+    if time < 1:
         print("Valid time value not provided, CPS reported will be total counts")
         time = 1
-
-    from config import category, energy_window_size
+    category = get_setting("category", "All")
+    energy_window_size = get_setting("energy_window_size", 15)
 
     energy_ref = pd.read_csv("IsotopeLibrary.csv")  # read energy reference
     df = pd.DataFrame(energy_ref)   # turn energy ref into pandas data frame
@@ -583,7 +607,7 @@ def source_lookup(Es, r2s, peak_areas, corrected):
 
 def find_optimum_source(d, i, Es, Is):
     """Finds the most likely source causing a peak based on different criteria."""
-    from config import common_isotopes
+    common_isotopes = get_setting("common_isotopes", [])
 
     # if no sources in dataframe for this peak then skip it
     dfi = d["df" + str(i)]
@@ -727,12 +751,15 @@ def main(spec_array, mariscotti=False, identification=False, efficiency_correcti
          useVoigt=False, smooth=False):
     """Main function for processing spectra. Must be passed a numpy array."""
     # try to retrieve config values and exit if not found
-    try:
-        from config import (min_FWHM, max_FWHM, FWHM_step, HLD, LLD, intensity_threshold, background_subtraction,
-                            num_iters, smooth_window, smooth_order)
-    except Exception as e:
-        print(f"FWHM estimates, HLD and LLD must be provided in config.py, error: {e}")
-        sys.exit()
+    min_FWHM = int(get_setting("min_FWHM", 20))
+    max_FWHM = int(get_setting("max_FWHM", 150))
+    FWHM_step = int(get_setting("FWHM_step", 5))
+    HLD = int(get_setting("HLD", len(spec_array) - 1))
+    LLD = int(get_setting("LLD", 0))
+    background_subtraction = get_setting("background_subtraction", "none")
+    num_iters = int(get_setting("num_iters", 2))
+    smooth_window = int(get_setting("smooth_window", 31))
+    smooth_order = int(get_setting("smooth_order", 2))
 
     # if the discriminators are outside of range of data, can't use them so just use all data
     if HLD > len(spec_array):
@@ -743,7 +770,7 @@ def main(spec_array, mariscotti=False, identification=False, efficiency_correcti
         LLD = 0
 
     if efficiency_correction:
-        eff_corrected_array = ec.correct_spectrum(spec_array)
+        eff_corrected_array = ec.correct_spectrum(spec_array, SETTINGS)
     else:
         eff_corrected_array = spec_array
 
@@ -755,13 +782,9 @@ def main(spec_array, mariscotti=False, identification=False, efficiency_correcti
     bg_corrected_array = np.zeros(corrected_array.shape)
 
     if background_subtraction == "rolling_ball":
-        try:
-            from config import ballradius, gradient, gradtype
-        except ImportError:
-            print("Error: rolling ball params not provided in config.py, defaulting to 500 size ball (no gradient)")
-            ballradius = 500
-            gradient = 0
-            gradtype = "sqrt"
+        ballradius = int(get_setting("ballradius", 500))
+        gradient = float(get_setting("gradient", 0))
+        gradtype = str(get_setting("gradtype", "sqrt"))
 
         background = rolling_ball_bg_subtract(corrected_array, ballradius, gradient, gradtype)
         bg_corrected_array += corrected_array - background
@@ -776,7 +799,6 @@ def main(spec_array, mariscotti=False, identification=False, efficiency_correcti
         peak_indices = np.where(signals[LLD:HLD] != 0)[0] + LLD
         FWHMs = FWHMs[peak_indices].astype(int)
     else:
-        from config import intensity_threshold
         peak_indices = find_peaks(bg_corrected_array[LLD:HLD], prominence=10)[0] + LLD
         FWHMs = [int((max_FWHM-min_FWHM)/2),]*len(peak_indices)
 
@@ -800,16 +822,14 @@ def main(spec_array, mariscotti=False, identification=False, efficiency_correcti
             peak_fitting(bg_corrected_array, peak_indices, FWHMs, widths=full_widths, voigt_func=useVoigt)
 
     energies = channel_to_energy(peak_indices)
-    try:
+    if len(energies) > 0 and len(peak_indices) > 0:
         if energies[0] != peak_indices[0]:
             print(f"peaks found at energies: {energies} with FWHMs: {FWHMs} and goodness of fits: {goodness_of_fits}")
         else:
             print(f"Peaks found at indices: {peak_indices} with FWHMs: {FWHMs} and goodness of fits: {goodness_of_fits}")
-    except Exception as e:
-        print(f"Error: {e}")
-        if len(energies) == 0 or len(peak_indices) == 0:
-            print("No peaks found")
-            sys.exit()
+    else:
+        print("No peaks found")
+        return pd.DataFrame(), bg_corrected_array, np.zeros(bg_corrected_array.shape), background
     converted_FWHMs = channel_to_energy(FWHMs)
     converted_full_widths = channel_to_energy(full_widths)
 
@@ -828,74 +848,35 @@ def main(spec_array, mariscotti=False, identification=False, efficiency_correcti
     return df, bg_corrected_array, fits, background
 
 
+def load_spectrum_file(file_path):
+    lower = file_path.lower()
+    if lower.endswith(".npy"):
+        spectrum = np.load(file_path)
+    elif lower.endswith(".txt"):
+        spectrum = np.genfromtxt(file_path, delimiter="\n", dtype=float)
+    elif lower.endswith(".csv"):
+        spectrum = np.genfromtxt(file_path, delimiter=",", dtype=float)
+    else:
+        spectrum = np.genfromtxt(file_path, dtype=float)
+
+    spectrum = np.asarray(spectrum)
+    if spectrum.ndim == 2:
+        if spectrum.shape[1] == 1:
+            spectrum = spectrum[:, 0]
+        else:
+            first_col = spectrum[:, 0]
+            channel_like = np.arange(len(first_col), dtype=float)
+            if np.all(np.isfinite(first_col)) and np.allclose(first_col, channel_like, atol=1.0):
+                spectrum = spectrum[:, 1]
+            else:
+                spectrum = spectrum[:, -1]
+    elif spectrum.ndim > 2:
+        spectrum = spectrum.reshape(-1)
+
+    spectrum = np.nan_to_num(spectrum, nan=0.0, posinf=0.0, neginf=0.0)
+    return spectrum.astype(float)
+
+
 if __name__ == "__main__":
-    #### EXAMPLE CODE FOR PROCESSING ####
-    start = time.time()
-
-    # define file
-    file = GUI.run_GUI()
-    if file is None:
-        sys.exit()
-
-    # read file as numpy array
-    if file[-4:] == ".txt":
-        f = np.genfromtxt(file, delimiter="\n", dtype=int)
-    elif file[-4:] == ".npy":
-        f = np.load(file)
-    elif file[-4:] == ".csv":
-        f = np.genfromtxt(file, delimiter=",", dtype=int)
-    else:
-        try:
-            f = np.genfromtxt(file, dtype=int)
-        except:
-            print("File type not recognised")
-            sys.exit()
-
-    df, corrected_array, fits, bg = main(f,
-                                     useVoigt=False,
-                                     mariscotti=False,
-                                     identification=True,
-                                     efficiency_correction=False,
-                                     smooth=True
-                                     )
-
-    df.to_csv(f"{file[:-4]}_info.csv", index=False)
-
-    for i in range(len(fits)):
-        if fits[i] < 1:
-            fits[i] = float('nan')
-        if corrected_array[i] < 1:
-            corrected_array[i] = 1
-
-    from config import LLD, HLD
-
-    if np.all(bg == 0):
-        fig, ax = plt.subplots(1, 1, figsize=(10, 7))
-        ax.plot(channel_to_energy(np.arange(len(f))), f, label="Raw Spectrum", alpha=0.5)
-        ax.plot(channel_to_energy(np.arange(len(corrected_array))), corrected_array,
-                label="Processed Spectrum", alpha=0.5)
-        ax.plot(channel_to_energy(np.arange(len(fits))), fits, label="Fits", alpha=0.5)
-        ax.legend()
-        ax.set_ylim(1, None)
-        ax.set_yscale("log")
-        ax.set_xlabel("Energy (keV)")
-        ax.set_ylabel("Counts")
-        plt.show()
-    else:
-        fig, ax = plt.subplots(2, 1, figsize=(10, 7))
-        ax[0].plot(channel_to_energy(np.arange(len(f))), f, label="Raw Spectrum", alpha=0.5)
-        ax[0].plot(channel_to_energy(np.arange(len(corrected_array))), corrected_array,
-                   label="Processed Spectrum", alpha=0.5)
-        ax[0].plot(channel_to_energy(np.arange(len(fits))), fits, label="Fits", alpha=0.5)
-        ax[0].legend()
-        ax[0].set_ylim(1, None)
-        ax[0].set_yscale("log")
-        ax[0].set_xlabel("Energy (keV)")
-        ax[0].set_ylabel("Counts")
-        ax[1].plot(channel_to_energy(np.arange(len(bg))), bg, label="Background", alpha=0.5)
-        ax[1].legend()
-        #ax[1].set_ylim(1, None)
-        ax[1].set_yscale("log")
-        ax[1].set_xlabel("Energy (keV)")
-        ax[1].set_ylabel("Counts")
-        plt.show()
+    from file_edit_GUI import run_GUI
+    run_GUI()
